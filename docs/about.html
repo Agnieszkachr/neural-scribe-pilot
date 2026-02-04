@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — The Neural Scribe</title>
+  <meta name="description" content="Methodology, technical details, and reproducibility guide for the Neural Scribe authorship analysis project.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav-bar" id="nav">
+  <a href="index.html">← Results</a>
+  <a href="#pipeline">Pipeline</a>
+  <a href="#data">Data</a>
+  <a href="#model">Model</a>
+  <a href="#reproduce">Reproduce</a>
+</nav>
+
+<!-- ══════════ HEADER ══════════ -->
+<section class="section fade-in" style="padding-top:6rem" id="about-top">
+  <h2 class="section-title">About This Project</h2>
+  <p class="section-lead">
+    <em>The Neural Scribe</em> investigates whether modern neural language models can detect
+    authorship differences in ancient Greek texts. This page documents the methodology,
+    data sources, and how to reproduce the analysis.
+  </p>
+</section>
+
+<!-- ══════════ PIPELINE ══════════ -->
+<section class="section fade-in" id="pipeline">
+  <h2 class="section-title">Analysis Pipeline</h2>
+  <p class="section-lead">
+    The analysis proceeds in four stages, each designed to minimise bias
+    and ensure reproducibility.
+  </p>
+
+  <div class="pipeline-steps">
+    <div class="pipeline-step">
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:.3rem">Corpus Preparation</h3>
+        <p style="color:var(--text-muted);font-size:.88rem">
+          Texts are fetched from the MorphGNT repository (morphological annotations of the SBLGNT).
+          Each text is segmented into overlapping chunks of 150 words with a 75-word stride to
+          maximise spatial resolution while maintaining context coherence. Only the <em>lemma</em>
+          column is extracted, stripping punctuation to align with the classic baseline pipeline.
+        </p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:.3rem">Classic Stylometry Baseline</h3>
+        <p style="color:var(--text-muted);font-size:.88rem">
+          A traditional stylometric analysis using PCA on z-scored frequencies of the 100 most
+          frequent words (MFW). This establishes that surface-level word distributions cannot
+          distinguish disputed letters from undisputed Paul — motivating the neural approach.
+          Chunks are treated as documents; PCA coordinates are saved for visualisation.
+        </p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:.3rem">Neural Embedding Probe</h3>
+        <p style="color:var(--text-muted);font-size:.88rem">
+          Each chunk is embedded using <code>pranaydeeps/Ancient-Greek-BERT</code> with mean pooling
+          over attention-masked tokens. A Pauline centroid and standard deviation are computed from
+          the 314 undisputed chunks only (one-class approach). Each target chunk's cosine distance
+          from this centroid is then z-score normalised to produce a σ-distance metric.
+        </p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:.3rem">Statistical Testing</h3>
+        <p style="color:var(--text-muted);font-size:.88rem">
+          For each disputed text, a one-sample t-test checks whether its mean σ-distance differs
+          significantly from zero. Cohen's d measures practical effect size. A Spearman rank
+          correlation tests whether the distances form a gradient matching scholarly consensus
+          rejection rates. Percentile analyses examine what fraction of chunks exceed P75/P90/P95
+          thresholds of the Pauline distribution.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DATA SOURCES ══════════ -->
+<section class="section fade-in" id="data">
+  <h2 class="section-title">Data Sources</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📜 MorphGNT / SBLGNT</h3>
+      <p>The primary text source is the MorphGNT project, which provides morphological annotations
+      of the SBL Greek New Testament. Each word is annotated with part of speech, parsing code,
+      text form, word form, normalised form, and lemma.</p>
+      <p style="margin-top:.5rem"><a href="https://github.com/morphgnt" target="_blank" rel="noopener">github.com/morphgnt →</a></p>
+    </div>
+    <div class="card">
+      <h3>📚 Scholarly Consensus</h3>
+      <p>Rejection rates for Pauline authorship are based on surveys of critical scholarship
+      (Ehrman 2012, Brown 1997, Kümmel 1975). The rates represent the approximate percentage
+      of scholars who consider each letter pseudepigraphal or non-Pauline.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Texts Analysed</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Group</th><th>Text</th><th>MorphGNT File</th><th>Chunks</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>Romans</td><td><code>66-Ro-morphgnt.txt</code></td><td>47</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>1 Corinthians</td><td><code>67-1Co-morphgnt.txt</code></td><td>46</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>2 Corinthians</td><td><code>68-2Co-morphgnt.txt</code></td><td>30</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>Galatians</td><td><code>69-Ga-morphgnt.txt</code></td><td>15</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>Philippians</td><td><code>71-Php-morphgnt.txt</code></td><td>—</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>1 Thessalonians</td><td><code>73-1Th-morphgnt.txt</code></td><td>—</td></tr>
+          <tr><td><span class="pill pill-green">Anchor</span></td><td>Philemon</td><td><code>78-Phm-morphgnt.txt</code></td><td>—</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>Colossians</td><td><code>72-Col-morphgnt.txt</code></td><td>20</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>2 Thessalonians</td><td><code>74-2Th-morphgnt.txt</code></td><td>10</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>Ephesians</td><td><code>70-Eph-morphgnt.txt</code></td><td>31</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>1 Timothy</td><td><code>75-1Ti-morphgnt.txt</code></td><td>20</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>2 Timothy</td><td><code>76-2Ti-morphgnt.txt</code></td><td>15</td></tr>
+          <tr><td><span class="pill pill-amber">Target</span></td><td>Titus</td><td><code>77-Tit-morphgnt.txt</code></td><td>8</td></tr>
+          <tr><td><span class="pill pill-rose">Control</span></td><td>Hebrews</td><td><code>79-Heb-morphgnt.txt</code></td><td>65</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MODEL ══════════ -->
+<section class="section fade-in" id="model">
+  <h2 class="section-title">Embedding Model</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Ancient Greek BERT</h3>
+      <p>We use <code>pranaydeeps/Ancient-Greek-BERT</code>, a BERT-base model pre-trained on
+      a large corpus of Ancient Greek texts including literary, philosophical, and religious
+      writings. The model uses a custom Ancient Greek tokeniser and vocabulary.</p>
+      <ul style="margin-top:.6rem">
+        <li>Architecture: BERT-base (12 layers, 768 hidden, 12 heads)</li>
+        <li>Pre-training corpus: Ancient Greek texts</li>
+        <li>Tokeniser: WordPiece, custom Greek vocabulary</li>
+        <li>Usage: zero-shot (no fine-tuning)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Embedding Extraction</h3>
+      <p>For each 150-word chunk:</p>
+      <ul>
+        <li>Tokenise with model tokeniser (max 512 sub-word tokens)</li>
+        <li>Forward pass through the model</li>
+        <li>Extract last hidden state</li>
+        <li>Apply attention-mask-weighted mean pooling</li>
+        <li>Result: one 768-dimensional vector per chunk</li>
+      </ul>
+      <p style="margin-top:.6rem;font-size:.82rem;color:var(--text-dim)">
+        Mean pooling with attention masking was selected over CLS-token extraction
+        based on empirical testing showing more stable results for this corpus.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ REPRODUCE ══════════ -->
+<section class="section fade-in" id="reproduce">
+  <h2 class="section-title">Reproducibility</h2>
+  <p class="section-lead">
+    All code and data are open-source. Follow these steps to reproduce the analysis.
+  </p>
+
+  <div class="card">
+    <h3>Quick Start</h3>
+    <pre style="background:var(--bg-card-alt);padding:1.2rem;border-radius:10px;overflow-x:auto;font-size:.82rem;line-height:1.6;color:var(--text-muted)"><code><span style="color:var(--text-dim)"># Clone the repository</span>
+git clone https://github.com/Agnieszkachr/neural-scribe-pilot.git
+cd neural-scribe-pilot
+
+<span style="color:var(--text-dim)"># Install dependencies</span>
+pip install -r requirements.txt
+
+<span style="color:var(--text-dim)"># Step 1: Run classic stylometry baseline</span>
+python run_classic_baseline.py
+
+<span style="color:var(--text-dim)"># Step 2: Run neural probe</span>
+python run_neural_probe.py
+
+<span style="color:var(--text-dim)"># Step 3: Generate visualizations</span>
+python visualize_dissociation.py
+python create_gradient_plot.py</code></pre>
+  </div>
+
+  <div class="card">
+    <h3>Dependencies</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Package</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>transformers</code></td><td>HuggingFace model loading (Ancient Greek BERT)</td></tr>
+          <tr><td><code>torch</code></td><td>Neural network inference</td></tr>
+          <tr><td><code>numpy</code></td><td>Numerical computation</td></tr>
+          <tr><td><code>scipy</code></td><td>Statistical testing (t-tests, Spearman ρ)</td></tr>
+          <tr><td><code>scikit-learn</code></td><td>PCA, dimensionality reduction</td></tr>
+          <tr><td><code>matplotlib</code></td><td>Static figure generation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Project Structure</h3>
+    <pre style="background:var(--bg-card-alt);padding:1.2rem;border-radius:10px;overflow-x:auto;font-size:.82rem;line-height:1.6;color:var(--text-muted)"><code>neural-scribe-pilot/
+├── data_loader.py           <span style="color:var(--text-dim)"># Corpus fetching & segmentation</span>
+├── run_classic_baseline.py  <span style="color:var(--text-dim)"># PCA on MFW z-scores</span>
+├── run_neural_probe.py      <span style="color:var(--text-dim)"># One-class neural classification</span>
+├── visualize_dissociation.py<span style="color:var(--text-dim)"># Method comparison plot</span>
+├── create_gradient_plot.py  <span style="color:var(--text-dim)"># Gradient scatter</span>
+├── requirements.txt
+├── data/                    <span style="color:var(--text-dim)"># MorphGNT files (auto-downloaded)</span>
+├── results/                 <span style="color:var(--text-dim)"># JSON outputs & embeddings</span>
+│   ├── classic_results.json
+│   ├── neural_results.json
+│   └── embeddings.npz
+└── site/                    <span style="color:var(--text-dim)"># This website</span></code></pre>
+  </div>
+
+  <div class="cta-row">
+    <a href="index.html" class="cta-btn">← Back to Results</a>
+    <a href="https://github.com/Agnieszkachr/neural-scribe-pilot" class="cta-btn cta-btn-outline">View on GitHub ↗</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <p><strong>The Neural Scribe</strong> · Authorship Gradient Detection · 2026</p>
+  <p style="margin-top:.4rem">
+    Embedding model: <code>pranaydeeps/Ancient-Greek-BERT</code> ·
+    Data: <a href="https://github.com/morphgnt" target="_blank" rel="noopener">MorphGNT</a> / SBLGNT
+  </p>
+</footer>
+
+<!-- ══════════ FADE-IN OBSERVER ══════════ -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Neural Scribe — Authorship Gradient Detection in the Pauline Corpus</title>
+  <meta name="description" content="Interactive visualizations of neural authorship analysis on the Pauline epistles. Using one-class classification with Ancient Greek BERT embeddings to detect authorship gradients.">
+  <meta name="keywords" content="authorship attribution, Pauline epistles, neural embeddings, Ancient Greek BERT, stylometry, digital humanities">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav-bar" id="nav">
+  <a href="#overview">Overview</a>
+  <a href="#methodology">Methodology</a>
+  <a href="#gradient">Gradient</a>
+  <a href="#stats">Statistics</a>
+  <a href="#distribution">Distribution</a>
+  <a href="#embeddings">Embeddings</a>
+  <a href="#classic">Classic Baseline</a>
+  <a href="#dissociation">Dissociation</a>
+  <a href="#findings">Findings</a>
+  <a href="about.html">About</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero" id="top">
+  <h1>The Neural Scribe</h1>
+  <p class="tagline">
+    Detecting authorship gradients in the Pauline corpus through
+    one-class neural classification with Ancient Greek BERT embeddings.
+  </p>
+  <div class="badge-row">
+    <span class="badge"><span class="dot" style="background:var(--green)"></span> 314 anchor chunks</span>
+    <span class="badge"><span class="dot" style="background:var(--accent)"></span> 7 disputed texts</span>
+    <span class="badge"><span class="dot" style="background:var(--amber)"></span> ρ = 0.704</span>
+    <span class="badge"><span class="dot" style="background:var(--cyan)"></span> Ancient-Greek-BERT</span>
+  </div>
+  <div class="scroll-cue">↓</div>
+</header>
+
+<!-- ══════════ OVERVIEW ══════════ -->
+<section class="section fade-in" id="overview">
+  <h2 class="section-title">Overview</h2>
+  <p class="section-lead">
+    Can neural language models detect what two centuries of scholarship have debated?
+    We use zero-shot embeddings from Ancient Greek BERT to measure semantic distance
+    between undisputed Pauline texts and letters of contested authorship.
+  </p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-val">314</div>
+      <div class="stat-label">Pauline anchor chunks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">169</div>
+      <div class="stat-label">Disputed text chunks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">0.704</div>
+      <div class="stat-label">Spearman ρ gradient</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">p &lt; .0001</div>
+      <div class="stat-label">Hebrews divergence</div>
+    </div>
+  </div>
+
+  <div class="card card-glass">
+    <h3>Research Question</h3>
+    <p>Scholars have long debated which New Testament letters attributed to Paul were genuinely
+    written by him. Traditional stylometry (word-frequency analysis) struggles because the
+    disputed letters are <em>stylistically very close</em> to authentic Paul. Our approach asks:
+    do modern neural embeddings — which capture deep semantic and syntactic patterns — reveal
+    an <strong>authorship gradient</strong> that correlates with scholarly consensus?</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Text</th><th>Scholarly Status</th><th>Rejection Rate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Undisputed Paul</td><td><span class="pill pill-green">Authentic</span></td><td>0%</td></tr>
+        <tr><td>Colossians</td><td><span class="pill pill-amber">Contested</span></td><td>~40%</td></tr>
+        <tr><td>2 Thessalonians</td><td><span class="pill pill-amber">Contested</span></td><td>~50%</td></tr>
+        <tr><td>Ephesians</td><td><span class="pill pill-amber">Contested</span></td><td>~60%</td></tr>
+        <tr><td>1 Timothy</td><td><span class="pill pill-rose">Likely pseudepigraphal</span></td><td>~80%</td></tr>
+        <tr><td>2 Timothy</td><td><span class="pill pill-rose">Likely pseudepigraphal</span></td><td>~80%</td></tr>
+        <tr><td>Titus</td><td><span class="pill pill-rose">Likely pseudepigraphal</span></td><td>~80%</td></tr>
+        <tr><td>Hebrews</td><td><span class="pill pill-rose">Non-Pauline (consensus)</span></td><td>100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ METHODOLOGY ══════════ -->
+<section class="section fade-in" id="methodology">
+  <h2 class="section-title">Methodology</h2>
+  <p class="section-lead">A one-class classification approach that avoids circular reasoning
+  by building the baseline exclusively from undisputed texts.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🧠 One-Class Classification</h3>
+      <p>The baseline centroid and variance are computed using <strong>only</strong> undisputed
+      Pauline texts (Romans, 1–2 Corinthians, Galatians, Philippians, 1 Thessalonians, Philemon).
+      Disputed texts are then measured against this baseline without influencing it — avoiding
+      the circular reasoning that plagues traditional multi-class approaches.</p>
+    </div>
+    <div class="card">
+      <h3>📐 Distance Metric</h3>
+      <p>Cosine distance with mean pooling, z-score normalised by intra-Pauline variance:</p>
+      <ul>
+        <li><strong>σ = 0.0</strong> → Pauline centroid</li>
+        <li><strong>Positive</strong> → divergence from Paul</li>
+        <li><strong>Negative</strong> → closer to centroid than typical Paul</li>
+      </ul>
+      <p style="margin-top:.6rem;font-size:.82rem;color:var(--text-dim)">
+        Cosine distance is the literature standard for sentence embeddings
+        (Reimers & Gurevych 2019), measuring directional similarity independent of magnitude.
+      </p>
+    </div>
+    <div class="card">
+      <h3>📊 Statistical Framework</h3>
+      <ul>
+        <li><strong>One-sample t-test</strong>: target mean ≠ 0</li>
+        <li><strong>Cohen's d</strong>: effect size for practical significance</li>
+        <li><strong>Spearman ρ</strong>: gradient correlation with scholarly consensus</li>
+        <li><strong>Percentile analysis</strong>: chunk-level distribution outside P75/P90/P95</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ Technical Setup</h3>
+      <ul>
+        <li>Model: <code>pranaydeeps/Ancient-Greek-BERT</code></li>
+        <li>Pooling: mean with attention mask</li>
+        <li>Window: 150 words, 75-word stride</li>
+        <li>Significance: α = 0.05 (two-tailed)</li>
+        <li>Data: SBLGNT / MorphGNT morphological annotations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GRADIENT SCATTER ══════════ -->
+<section class="section fade-in" id="gradient">
+  <h2 class="section-title">Authorship Gradient</h2>
+  <p class="section-lead">
+    Semantic distance from the Pauline baseline plotted against scholarly rejection rate.
+    The positive trend (ρ = 0.704) shows that texts more frequently rejected by scholars
+    tend to diverge further in neural embedding space.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="gradientChart"></canvas>
+    <div class="chart-label">Spearman ρ = 0.704, p = 0.077 (n = 7 texts)</div>
+  </div>
+  <div class="card card-glass">
+    <h3>Reading the Chart</h3>
+    <p>Each point represents a disputed text. The x-axis shows the percentage of scholars
+    who reject Pauline authorship; the y-axis shows how far the text's embedding centroid
+    sits from the undisputed Pauline centroid (in standard deviations). The dashed trend line
+    captures the positive correlation. Hebrews and 1 Timothy — coloured in rose — stand out
+    as the clearest outliers, while 2 Thessalonians and Ephesians (green) sit close to or
+    below the Pauline baseline.</p>
+  </div>
+</section>
+
+<!-- ══════════ STATISTICS ══════════ -->
+<section class="section fade-in" id="stats">
+  <h2 class="section-title">Statistical Results</h2>
+  <p class="section-lead">
+    Distance from Paul (in σ units) with 95% confidence intervals and significance testing.
+    Only Hebrews and 1 Timothy reach statistical significance.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="distanceChart"></canvas>
+    <div class="chart-label">Error bars show 95% confidence intervals · Baseline at σ = 0</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Text</th><th>N chunks</th><th>Distance (σ)</th><th>95% CI</th><th>P-Value</th><th>Cohen's d</th><th>Verdict</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Paul (baseline)</td><td>314</td><td>0.00</td><td>—</td><td>—</td><td>—</td><td><span class="pill pill-green">Baseline</span></td></tr>
+        <tr><td>Colossians</td><td>20</td><td>0.24</td><td>[−0.20, 0.69]</td><td>0.261</td><td>0.25</td><td><span class="not-sig">Indistinguishable</span></td></tr>
+        <tr><td>2 Thessalonians</td><td>10</td><td>−0.22</td><td>[−0.70, 0.26]</td><td>0.320</td><td>−0.26</td><td><span class="not-sig">Indistinguishable</span></td></tr>
+        <tr><td>Ephesians</td><td>31</td><td>−0.03</td><td>[−0.39, 0.33]</td><td>0.868</td><td>−0.03</td><td><span class="not-sig">Indistinguishable</span></td></tr>
+        <tr><td>1 Timothy</td><td>20</td><td><strong>0.79</strong></td><td>[0.39, 1.20]</td><td><strong>0.0007</strong></td><td><strong>0.84</strong></td><td><span class="sig">Significant ✦</span></td></tr>
+        <tr><td>2 Timothy</td><td>15</td><td>0.11</td><td>[−0.61, 0.83]</td><td>0.748</td><td>0.09</td><td><span class="not-sig">Indistinguishable</span></td></tr>
+        <tr><td>Titus</td><td>8</td><td>1.11</td><td>[−0.10, 2.32]</td><td>0.067</td><td>0.89</td><td><span class="marginal">Marginal</span></td></tr>
+        <tr><td>Hebrews</td><td>65</td><td><strong>1.21</strong></td><td>[0.75, 1.67]</td><td><strong>&lt;0.0001</strong></td><td><strong>0.81</strong></td><td><span class="sig">Significant ✦</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ CHUNK DISTRIBUTION ══════════ -->
+<section class="section fade-in" id="distribution">
+  <h2 class="section-title">Chunk Distribution Analysis</h2>
+  <p class="section-lead">
+    What percentage of each text's chunks fall outside Pauline percentile thresholds?
+    Texts with true authorial divergence should show many chunks in the tails.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="distributionChart"></canvas>
+    <div class="chart-label">Dashed lines show expected Pauline baselines (25%, 10%, 5%)</div>
+  </div>
+  <div class="card card-glass">
+    <h3>Interpreting the Bars</h3>
+    <p>By definition, 25% of Pauline chunks exceed P75, 10% exceed P90, and 5% exceed P95.
+    Values substantially above these baselines indicate systematic divergence.
+    Hebrews shows the most extreme pattern: <strong>58.5%</strong> of its chunks exceed P75
+    and <strong>38.5%</strong> exceed P95 — nearly eight times the expected rate. 1 Timothy
+    follows with 65% above P75. In contrast, 2 Thessalonians shows <em>fewer</em> extreme
+    chunks than expected, with 0% above P90 — consistent with its negative mean distance.</p>
+  </div>
+</section>
+
+<!-- ══════════ EMBEDDING PCA ══════════ -->
+<section class="section fade-in" id="embeddings">
+  <h2 class="section-title">Neural Embedding Space</h2>
+  <p class="section-lead">
+    PCA projection of BERT embedding chunks reveals clear geometric separation between
+    Pauline and non-Pauline texts in the latent space.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="embeddingChart"></canvas>
+    <div class="chart-label">PCA of Ancient Greek BERT embeddings · 150-word chunks, mean pooled</div>
+  </div>
+  <div class="card card-glass">
+    <h3>Three Distinct Regions</h3>
+    <p>The scatter plot shows embedding chunks projected via PCA. Pauline texts (indigo dots)
+    form a tight cluster in the positive PC1 region. Hebrews (rose triangles) separates
+    cleanly into negative PC1, confirming neural divergence. Colossians (amber diamonds) occupies
+    a distinct position on PC2, intermediate between Paul and Hebrews — consistent with its
+    contested status. This geometric structure is invisible to classic word-frequency methods.</p>
+  </div>
+</section>
+
+<!-- ══════════ CLASSIC BASELINE ══════════ -->
+<section class="section fade-in" id="classic">
+  <h2 class="section-title">Classic Stylometry Baseline</h2>
+  <p class="section-lead">
+    PCA on most-frequent-word z-scores (100 MFW) shows high lexical similarity across all texts —
+    classic methods cannot distinguish disputed letters from Paul.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="pcaChart"></canvas>
+    <div class="chart-label">PCA on 100 MFW z-scores · PC1 explains 4.98%, PC2 explains 3.72% of variance</div>
+  </div>
+  <div class="card card-glass">
+    <h3>Why Classic Stylometry Fails Here</h3>
+    <p>Classic stylometry relies on surface-level word frequencies. All Pauline and
+    pseudo-Pauline texts cluster tightly in PCA space (blue box) because the disputed authors
+    successfully mimicked Paul's vocabulary. Only Hebrews shows slight separation on PC2.
+    Colossians (amber) is the most distant on PC1, yet the total variance explained is
+    extremely low (4.98% + 3.72%), meaning even these small differences may be noise.
+    This motivates the neural approach, which captures deeper semantic and syntactic patterns
+    invisible to word-counting methods.</p>
+  </div>
+</section>
+
+<!-- ══════════ DISSOCIATION ══════════ -->
+<section class="section fade-in" id="dissociation">
+  <h2 class="section-title">Method Dissociation</h2>
+  <p class="section-lead">
+    The neural probe detects divergence where classic stylometry does not —
+    a dissociation that validates the complementary value of deep embeddings.
+  </p>
+  <div class="chart-wrap">
+    <canvas id="dissociationChart"></canvas>
+    <div class="chart-label">Left axis: neural distance (σ) · Right axis: classic lexical similarity (0–1)</div>
+  </div>
+  <div class="card card-glass">
+    <h3>Two Methods, Two Stories</h3>
+    <p>Classic stylometry (amber bars) shows uniformly high lexical overlap with Paul across all texts,
+    ranging from 0.82 (Hebrews) to 0.97 (2 Thessalonians). The neural distance measure (indigo bars)
+    reveals a starkly different picture: Hebrews (1.21σ), Titus (1.11σ), and 1 Timothy (0.79σ)
+    stand well above the baseline, while 2 Thessalonians (−0.22σ) and Ephesians (−0.03σ) remain close
+    or below. This dissociation demonstrates that neural embeddings capture information
+    about authorship that surface-level word frequencies miss entirely.</p>
+  </div>
+</section>
+
+<!-- ══════════ KEY FINDINGS ══════════ -->
+<section class="section fade-in" id="findings">
+  <h2 class="section-title">Key Findings</h2>
+  <p class="section-lead">What the neural probe reveals about the Pauline corpus.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>✅ Gradient Detected</h3>
+      <p>Semantic distance correlates with scholarly rejection rates (ρ = 0.704).
+      Texts more frequently rejected as non-Pauline show greater neural divergence,
+      producing a monotonic trend that approaches conventional significance (p = 0.077)
+      with only 7 data points.</p>
+    </div>
+    <div class="card">
+      <h3>✅ Hebrews Validated</h3>
+      <p>Hebrews — universally regarded as non-Pauline — shows the strongest divergence
+      (1.21σ, p &lt; 0.0001, d = 0.81), with 38.5% of chunks outside the 95th percentile.
+      This validates the method's ability to detect genuine authorial differences.</p>
+    </div>
+    <div class="card">
+      <h3>🔍 Pastoral Split</h3>
+      <p>1 Timothy shows clear divergence (d = 0.84, p = 0.0007), while 2 Timothy
+      remains indistinguishable (d = 0.09, p = 0.748). This may reflect different
+      compositional histories or varying degrees of authentic material embedded in each
+      letter — a finding consistent with some recent scholarship.</p>
+    </div>
+    <div class="card">
+      <h3>📌 Contested Letters Close</h3>
+      <p>2 Thessalonians (−0.22σ) and Ephesians (−0.03σ) show negative distances,
+      clustering closer to Paul than average. This is consistent with either authentic
+      authorship or high-quality stylistic mimicry that captures deep semantic patterns
+      beyond mere word-frequency imitation.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Limitations &amp; Future Directions</h3>
+    <ul>
+      <li><strong>Overlapping chunks</strong>: 50% stride overlap inflates effective sample size;
+      future work will use dependence-aware inference (block bootstrap).</li>
+      <li><strong>Zero-shot only</strong>: Fine-tuned domain-specific models may reveal additional
+      signal currently masked by generic embeddings.</li>
+      <li><strong>Punctuation removed</strong>: Greek punctuation was stripped to match the classical
+      baseline; the neural pipeline should retain it for richer syntactic encoding.</li>
+      <li><strong>Gradient approaching significance</strong> (p = 0.077) with only 7 data points;
+      expanding the corpus to additional NT texts will increase statistical power.</li>
+      <li><strong>Single model</strong>: Cross-model convergence analyses (multiple embedding
+      architectures) will strengthen confidence in the detected gradient.</li>
+    </ul>
+  </div>
+
+  <div class="cta-row">
+    <a href="about.html" class="cta-btn">Methodology Details →</a>
+    <a href="https://github.com/Agnieszkachr/neural-scribe-pilot" class="cta-btn cta-btn-outline">View on GitHub ↗</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <p><strong>The Neural Scribe</strong> · Authorship Gradient Detection · 2026</p>
+  <p style="margin-top:.4rem">
+    Embedding model: <code>pranaydeeps/Ancient-Greek-BERT</code> ·
+    Data: <a href="https://github.com/morphgnt" target="_blank" rel="noopener">MorphGNT</a> / SBLGNT
+  </p>
+</footer>
+
+<!-- ══════════ JAVASCRIPT ══════════ -->
+<script src="charts.js"></script>
+
+</body>
+</html>

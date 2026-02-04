@@ -1,0 +1,155 @@
+{
+  "methodology": "One-Class Cosine Distance with Mean Pooling",
+  "anchor_chunks": 314,
+  "baseline_mean": 0.06886009871959686,
+  "baseline_std": 0.016410693526268005,
+  "distance_results": [
+    {
+      "text": "Colossians",
+      "n_chunks": 20,
+      "mean_sigma": "0.24",
+      "std_sigma": "0.92",
+      "ci_95": [
+        -0.2,
+        0.69
+      ],
+      "t_statistic": 1.16,
+      "p_value": 0.2614939791297708,
+      "cohens_d": "0.25",
+      "interpretation": "Indistinguishable"
+    },
+    {
+      "text": "2thessalonians",
+      "n_chunks": 10,
+      "mean_sigma": "-0.22",
+      "std_sigma": "0.64",
+      "ci_95": [
+        -0.7,
+        0.26
+      ],
+      "t_statistic": -1.05,
+      "p_value": 0.3201804766031142,
+      "cohens_d": "-0.26",
+      "interpretation": "Indistinguishable"
+    },
+    {
+      "text": "Ephesians",
+      "n_chunks": 31,
+      "mean_sigma": "-0.03",
+      "std_sigma": "0.97",
+      "ci_95": [
+        -0.39,
+        0.33
+      ],
+      "t_statistic": -0.17,
+      "p_value": 0.8683038521647,
+      "cohens_d": "-0.03",
+      "interpretation": "Indistinguishable"
+    },
+    {
+      "text": "1timothy",
+      "n_chunks": 20,
+      "mean_sigma": "0.79",
+      "std_sigma": "0.85",
+      "ci_95": [
+        0.39,
+        1.2
+      ],
+      "t_statistic": 4.06,
+      "p_value": 0.0006677289190991298,
+      "cohens_d": "0.84",
+      "interpretation": "Significant divergence"
+    },
+    {
+      "text": "2timothy",
+      "n_chunks": 15,
+      "mean_sigma": "0.11",
+      "std_sigma": "1.26",
+      "ci_95": [
+        -0.61,
+        0.83
+      ],
+      "t_statistic": 0.33,
+      "p_value": 0.7479835029219928,
+      "cohens_d": "0.09",
+      "interpretation": "Indistinguishable"
+    },
+    {
+      "text": "Titus",
+      "n_chunks": 8,
+      "mean_sigma": "1.11",
+      "std_sigma": "1.36",
+      "ci_95": [
+        -0.1,
+        2.32
+      ],
+      "t_statistic": 2.17,
+      "p_value": 0.06687888112325985,
+      "cohens_d": "0.89",
+      "interpretation": "Indistinguishable"
+    },
+    {
+      "text": "Hebrews",
+      "n_chunks": 65,
+      "mean_sigma": "1.21",
+      "std_sigma": "1.83",
+      "ci_95": [
+        0.75,
+        1.67
+      ],
+      "t_statistic": 5.28,
+      "p_value": 1.6365753445335226e-06,
+      "cohens_d": "0.81",
+      "interpretation": "Significant divergence"
+    }
+  ],
+  "chunk_distribution": [
+    {
+      "text": "Colossians",
+      "pct_outside_p75": 35.0,
+      "pct_outside_p90": 10.0,
+      "pct_outside_p95": 10.0
+    },
+    {
+      "text": "2thessalonians",
+      "pct_outside_p75": 20.0,
+      "pct_outside_p90": 0.0,
+      "pct_outside_p95": 0.0
+    },
+    {
+      "text": "Ephesians",
+      "pct_outside_p75": 16.1,
+      "pct_outside_p90": 9.7,
+      "pct_outside_p95": 9.7
+    },
+    {
+      "text": "1timothy",
+      "pct_outside_p75": 65.0,
+      "pct_outside_p90": 20.0,
+      "pct_outside_p95": 10.0
+    },
+    {
+      "text": "2timothy",
+      "pct_outside_p75": 33.3,
+      "pct_outside_p90": 20.0,
+      "pct_outside_p95": 20.0
+    },
+    {
+      "text": "Titus",
+      "pct_outside_p75": 50.0,
+      "pct_outside_p90": 37.5,
+      "pct_outside_p95": 37.5
+    },
+    {
+      "text": "Hebrews",
+      "pct_outside_p75": 58.5,
+      "pct_outside_p90": 43.1,
+      "pct_outside_p95": 38.5
+    }
+  ],
+  "gradient": {
+    "n_texts": 7,
+    "spearman_rho": 0.704,
+    "p_value": 0.0774
+  }
+}
