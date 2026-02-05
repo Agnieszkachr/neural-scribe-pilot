@@ -1,0 +1,2908 @@
+{
+  "methodology": "Burrows' Delta (100 MFW, Z-score, PCA)",
+  "n_mfw": 100,
+  "variance_explained": {
+    "PC1": 4.98,
+    "PC2": 3.72
+  },
+  "chunks": [
+    {
+      "group": "anchor",
+      "label": "anchor_0",
+      "PC1": 5.2767,
+      "PC2": -0.5754
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_1",
+      "PC1": 3.7773,
+      "PC2": 3.0996
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_2",
+      "PC1": 1.128,
+      "PC2": 1.9668
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_3",
+      "PC1": -0.2769,
+      "PC2": -1.7476
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_4",
+      "PC1": 0.5264,
+      "PC2": -2.9012
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_5",
+      "PC1": 0.5592,
+      "PC2": -2.8239
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_6",
+      "PC1": -0.6216,
+      "PC2": -1.4181
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_7",
+      "PC1": -0.3715,
+      "PC2": -1.9646
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_8",
+      "PC1": -0.5242,
+      "PC2": -1.646
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_9",
+      "PC1": -0.9387,
+      "PC2": -1.6691
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_10",
+      "PC1": -0.5501,
+      "PC2": -3.0787
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_11",
+      "PC1": -2.9261,
+      "PC2": -2.6701
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_12",
+      "PC1": -4.4771,
+      "PC2": -1.7441
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_13",
+      "PC1": -2.9075,
+      "PC2": -1.3313
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_14",
+      "PC1": -3.8913,
+      "PC2": -1.2431
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_15",
+      "PC1": -4.6708,
+      "PC2": -2.2921
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_16",
+      "PC1": 0.5086,
+      "PC2": -4.2357
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_17",
+      "PC1": 0.8789,
+      "PC2": -5.1227
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_18",
+      "PC1": -3.3507,
+      "PC2": -4.6295
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_19",
+      "PC1": -2.4665,
+      "PC2": -3.3409
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_20",
+      "PC1": -2.0701,
+      "PC2": -3.0687
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_21",
+      "PC1": -2.2558,
+      "PC2": -2.8653
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_22",
+      "PC1": -0.5656,
+      "PC2": -2.1911
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_23",
+      "PC1": 1.0469,
+      "PC2": -1.6395
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_24",
+      "PC1": 1.3766,
+      "PC2": -0.1314
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_25",
+      "PC1": 1.7647,
+      "PC2": -1.1222
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_26",
+      "PC1": 0.0957,
+      "PC2": -2.1325
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_27",
+      "PC1": -0.9002,
+      "PC2": -1.5025
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_28",
+      "PC1": 0.7606,
+      "PC2": -1.2945
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_29",
+      "PC1": -0.2523,
+      "PC2": -1.2065
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_30",
+      "PC1": -0.8583,
+      "PC2": -0.054
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_31",
+      "PC1": -1.9058,
+      "PC2": 1.318
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_32",
+      "PC1": -1.0178,
+      "PC2": -0.549
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_33",
+      "PC1": 0.7371,
+      "PC2": -0.7331
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_34",
+      "PC1": -0.4695,
+      "PC2": 0.8832
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_35",
+      "PC1": -1.4005,
+      "PC2": -0.7226
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_36",
+      "PC1": -2.883,
+      "PC2": -1.9631
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_37",
+      "PC1": -4.5202,
+      "PC2": 0.4401
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_38",
+      "PC1": -5.1915,
+      "PC2": 2.6045
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_39",
+      "PC1": -2.2325,
+      "PC2": 0.861
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_40",
+      "PC1": 1.8067,
+      "PC2": -2.3631
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_41",
+      "PC1": 0.2523,
+      "PC2": -2.2748
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_42",
+      "PC1": -2.3463,
+      "PC2": 1.3326
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_43",
+      "PC1": -2.7636,
+      "PC2": 2.1039
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_44",
+      "PC1": -1.1035,
+      "PC2": -1.2128
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_45",
+      "PC1": -1.8917,
+      "PC2": -0.6433
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_46",
+      "PC1": -2.3809,
+      "PC2": 0.0205
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_47",
+      "PC1": 0.7369,
+      "PC2": -0.5469
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_48",
+      "PC1": 2.8266,
+      "PC2": 0.6213
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_49",
+      "PC1": 2.041,
+      "PC2": -0.3127
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_50",
+      "PC1": -1.2658,
+      "PC2": -0.7329
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_51",
+      "PC1": -3.4961,
+      "PC2": -0.5235
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_52",
+      "PC1": -3.7807,
+      "PC2": -0.8307
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_53",
+      "PC1": -2.3808,
+      "PC2": -1.8311
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_54",
+      "PC1": -1.0033,
+      "PC2": -1.5334
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_55",
+      "PC1": -2.0298,
+      "PC2": -0.3734
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_56",
+      "PC1": -3.0309,
+      "PC2": -1.4494
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_57",
+      "PC1": -3.6332,
+      "PC2": -2.7379
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_58",
+      "PC1": -4.4384,
+      "PC2": -1.0299
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_59",
+      "PC1": -3.8982,
+      "PC2": -0.0458
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_60",
+      "PC1": -3.5912,
+      "PC2": -1.8099
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_61",
+      "PC1": -4.3787,
+      "PC2": -1.6639
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_62",
+      "PC1": -3.8154,
+      "PC2": -1.5488
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_63",
+      "PC1": -3.6258,
+      "PC2": -0.8885
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_64",
+      "PC1": -4.2175,
+      "PC2": -0.4089
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_65",
+      "PC1": -3.1163,
+      "PC2": 0.9583
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_66",
+      "PC1": -1.5087,
+      "PC2": 0.7167
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_67",
+      "PC1": 0.6526,
+      "PC2": -2.7296
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_68",
+      "PC1": 1.2376,
+      "PC2": -1.5655
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_69",
+      "PC1": 0.1745,
+      "PC2": -0.6762
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_70",
+      "PC1": -0.1529,
+      "PC2": -1.3537
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_71",
+      "PC1": -1.4975,
+      "PC2": -0.0482
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_72",
+      "PC1": -3.6002,
+      "PC2": 0.5849
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_73",
+      "PC1": -3.1087,
+      "PC2": -0.8925
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_74",
+      "PC1": -3.493,
+      "PC2": -1.0359
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_75",
+      "PC1": -3.8271,
+      "PC2": -0.5075
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_76",
+      "PC1": -2.6353,
+      "PC2": -0.2492
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_77",
+      "PC1": -2.4309,
+      "PC2": 0.4017
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_78",
+      "PC1": -2.303,
+      "PC2": 0.212
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_79",
+      "PC1": -1.5515,
+      "PC2": -0.8005
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_80",
+      "PC1": -1.8073,
+      "PC2": -1.5374
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_81",
+      "PC1": -0.5849,
+      "PC2": -1.1324
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_82",
+      "PC1": 1.6586,
+      "PC2": -1.614
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_83",
+      "PC1": 1.5369,
+      "PC2": 0.0293
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_84",
+      "PC1": 1.3273,
+      "PC2": 0.3264
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_85",
+      "PC1": 0.9512,
+      "PC2": -0.0301
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_86",
+      "PC1": 0.3584,
+      "PC2": 0.9352
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_87",
+      "PC1": 2.8108,
+      "PC2": 2.0001
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_88",
+      "PC1": 4.3027,
+      "PC2": 0.987
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_89",
+      "PC1": 2.986,
+      "PC2": -1.9797
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_90",
+      "PC1": 2.9355,
+      "PC2": -1.9443
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_91",
+      "PC1": 1.9806,
+      "PC2": 0.0919
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_92",
+      "PC1": 2.4307,
+      "PC2": 1.9755
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_93",
+      "PC1": 9.5061,
+      "PC2": 3.7321
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_94",
+      "PC1": 4.8721,
+      "PC2": 4.9969
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_95",
+      "PC1": -1.2419,
+      "PC2": 3.3934
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_96",
+      "PC1": -1.3125,
+      "PC2": -0.6499
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_97",
+      "PC1": 0.1308,
+      "PC2": -1.1389
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_98",
+      "PC1": 0.8199,
+      "PC2": 1.9552
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_99",
+      "PC1": 1.0128,
+      "PC2": 2.4231
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_100",
+      "PC1": -0.0897,
+      "PC2": -0.5337
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_101",
+      "PC1": -1.5097,
+      "PC2": -0.6262
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_102",
+      "PC1": -1.414,
+      "PC2": 2.1007
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_103",
+      "PC1": -2.7739,
+      "PC2": 2.5062
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_104",
+      "PC1": -3.4373,
+      "PC2": 1.0174
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_105",
+      "PC1": -1.923,
+      "PC2": 1.3118
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_106",
+      "PC1": -1.3252,
+      "PC2": 1.7848
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_107",
+      "PC1": -0.8822,
+      "PC2": 1.5878
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_108",
+      "PC1": -0.4564,
+      "PC2": 2.754
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_109",
+      "PC1": 0.711,
+      "PC2": 3.2325
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_110",
+      "PC1": 1.8363,
+      "PC2": 3.7322
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_111",
+      "PC1": 0.6838,
+      "PC2": 3.6065
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_112",
+      "PC1": -0.3039,
+      "PC2": 2.6728
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_113",
+      "PC1": -0.2324,
+      "PC2": 2.1633
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_114",
+      "PC1": -1.1969,
+      "PC2": 1.2281
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_115",
+      "PC1": -2.1618,
+      "PC2": 1.8576
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_116",
+      "PC1": -2.1478,
+      "PC2": 2.1894
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_117",
+      "PC1": -1.271,
+      "PC2": 0.8497
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_118",
+      "PC1": -1.1679,
+      "PC2": 0.6235
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_119",
+      "PC1": -2.3975,
+      "PC2": 0.7156
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_120",
+      "PC1": -4.0491,
+      "PC2": 1.4221
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_121",
+      "PC1": -3.4776,
+      "PC2": 1.7817
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_122",
+      "PC1": -3.7794,
+      "PC2": 0.9118
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_123",
+      "PC1": -3.1027,
+      "PC2": 1.6239
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_124",
+      "PC1": -1.5435,
+      "PC2": 3.6241
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_125",
+      "PC1": -2.1279,
+      "PC2": 3.6925
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_126",
+      "PC1": -1.561,
+      "PC2": 2.6427
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_127",
+      "PC1": -1.3854,
+      "PC2": 2.0383
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_128",
+      "PC1": -1.6247,
+      "PC2": 1.0526
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_129",
+      "PC1": -1.0924,
+      "PC2": -0.0681
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_130",
+      "PC1": -1.3539,
+      "PC2": -0.6407
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_131",
+      "PC1": -2.2197,
+      "PC2": 1.1357
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_132",
+      "PC1": -2.1827,
+      "PC2": 0.9548
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_133",
+      "PC1": -2.0458,
+      "PC2": 0.7708
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_134",
+      "PC1": -4.0705,
+      "PC2": 2.8076
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_135",
+      "PC1": -3.6948,
+      "PC2": 2.3663
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_136",
+      "PC1": -2.5343,
+      "PC2": 1.7767
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_137",
+      "PC1": -2.3846,
+      "PC2": 1.4921
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_138",
+      "PC1": -0.7249,
+      "PC2": -0.1777
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_139",
+      "PC1": -0.5353,
+      "PC2": 0.0469
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_140",
+      "PC1": -2.194,
+      "PC2": 0.7794
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_141",
+      "PC1": -2.1012,
+      "PC2": 0.5638
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_142",
+      "PC1": -1.3514,
+      "PC2": 1.0699
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_143",
+      "PC1": -0.9193,
+      "PC2": 1.9368
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_144",
+      "PC1": -2.3156,
+      "PC2": 1.6241
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_145",
+      "PC1": -3.0835,
+      "PC2": -0.2339
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_146",
+      "PC1": -2.0052,
+      "PC2": 1.35
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_147",
+      "PC1": -2.3992,
+      "PC2": 3.0719
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_148",
+      "PC1": -0.8034,
+      "PC2": 1.0592
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_149",
+      "PC1": -0.1201,
+      "PC2": 0.9835
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_150",
+      "PC1": -0.4528,
+      "PC2": 2.7985
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_151",
+      "PC1": -0.7727,
+      "PC2": 1.1663
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_152",
+      "PC1": -1.4764,
+      "PC2": -0.2191
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_153",
+      "PC1": -4.8896,
+      "PC2": 0.8806
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_154",
+      "PC1": -5.3086,
+      "PC2": 0.5793
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_155",
+      "PC1": -1.9534,
+      "PC2": 0.4802
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_156",
+      "PC1": -2.234,
+      "PC2": 0.4995
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_157",
+      "PC1": -3.512,
+      "PC2": 0.0106
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_158",
+      "PC1": -3.084,
+      "PC2": -0.0319
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_159",
+      "PC1": -3.2308,
+      "PC2": 0.809
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_160",
+      "PC1": -3.7933,
+      "PC2": 3.4799
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_161",
+      "PC1": -2.7486,
+      "PC2": 3.4368
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_162",
+      "PC1": -3.2685,
+      "PC2": 0.8753
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_163",
+      "PC1": -3.3909,
+      "PC2": 0.9481
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_164",
+      "PC1": -2.7766,
+      "PC2": 2.1163
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_165",
+      "PC1": -3.4411,
+      "PC2": 2.2071
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_166",
+      "PC1": -2.753,
+      "PC2": 3.1742
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_167",
+      "PC1": -0.4813,
+      "PC2": 4.0937
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_168",
+      "PC1": 0.2312,
+      "PC2": 1.6022
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_169",
+      "PC1": -3.8186,
+      "PC2": 1.2017
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_170",
+      "PC1": -4.707,
+      "PC2": 1.8017
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_171",
+      "PC1": -0.84,
+      "PC2": -0.6273
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_172",
+      "PC1": -0.2576,
+      "PC2": -2.0439
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_173",
+      "PC1": -1.6695,
+      "PC2": 0.1981
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_174",
+      "PC1": -2.8721,
+      "PC2": 1.1351
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_175",
+      "PC1": -2.5933,
+      "PC2": -0.0094
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_176",
+      "PC1": -1.3942,
+      "PC2": 0.9791
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_177",
+      "PC1": -1.8513,
+      "PC2": 1.6476
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_178",
+      "PC1": 0.3281,
+      "PC2": 1.7289
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_179",
+      "PC1": 0.9074,
+      "PC2": 2.8017
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_180",
+      "PC1": -0.6069,
+      "PC2": 2.1374
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_181",
+      "PC1": 0.5405,
+      "PC2": 1.086
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_182",
+      "PC1": 1.3928,
+      "PC2": 1.8159
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_183",
+      "PC1": 5.318,
+      "PC2": 0.7165
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_184",
+      "PC1": 3.0008,
+      "PC2": 0.8922
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_185",
+      "PC1": 2.522,
+      "PC2": 2.6917
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_186",
+      "PC1": 2.5425,
+      "PC2": 3.29
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_187",
+      "PC1": 2.6259,
+      "PC2": 1.5441
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_188",
+      "PC1": 0.9061,
+      "PC2": 1.2811
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_189",
+      "PC1": -0.9979,
+      "PC2": 2.826
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_190",
+      "PC1": -0.2627,
+      "PC2": 1.8994
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_191",
+      "PC1": 0.9496,
+      "PC2": -0.5032
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_192",
+      "PC1": 0.7352,
+      "PC2": 0.8371
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_193",
+      "PC1": -0.6388,
+      "PC2": 1.9608
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_194",
+      "PC1": -1.7595,
+      "PC2": -0.3379
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_195",
+      "PC1": -1.8209,
+      "PC2": -1.0442
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_196",
+      "PC1": -0.0082,
+      "PC2": -0.3641
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_197",
+      "PC1": 0.9244,
+      "PC2": -0.5146
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_198",
+      "PC1": 1.0214,
+      "PC2": 0.1452
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_199",
+      "PC1": 1.0914,
+      "PC2": 1.0319
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_200",
+      "PC1": -0.4084,
+      "PC2": 0.387
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_201",
+      "PC1": -0.6973,
+      "PC2": -0.3127
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_202",
+      "PC1": 1.2688,
+      "PC2": 0.5886
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_203",
+      "PC1": 2.1574,
+      "PC2": 1.3419
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_204",
+      "PC1": 2.9771,
+      "PC2": 0.0708
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_205",
+      "PC1": 2.5214,
+      "PC2": -0.6439
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_206",
+      "PC1": 1.255,
+      "PC2": 0.0372
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_207",
+      "PC1": 0.9501,
+      "PC2": 1.0288
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_208",
+      "PC1": 0.0658,
+      "PC2": 0.8412
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_209",
+      "PC1": 1.1067,
+      "PC2": 1.0004
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_210",
+      "PC1": 1.2301,
+      "PC2": 2.0699
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_211",
+      "PC1": -0.1522,
+      "PC2": 2.4567
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_212",
+      "PC1": 1.0627,
+      "PC2": 3.0151
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_213",
+      "PC1": 2.5427,
+      "PC2": -0.0522
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_214",
+      "PC1": 3.0034,
+      "PC2": -0.7166
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_215",
+      "PC1": 0.1852,
+      "PC2": 2.0234
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_216",
+      "PC1": -1.9705,
+      "PC2": 0.9724
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_217",
+      "PC1": 0.934,
+      "PC2": 1.3203
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_218",
+      "PC1": 3.1575,
+      "PC2": 1.8329
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_219",
+      "PC1": 2.0068,
+      "PC2": 2.7963
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_220",
+      "PC1": -0.0147,
+      "PC2": 1.8052
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_221",
+      "PC1": 1.399,
+      "PC2": -1.7078
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_222",
+      "PC1": 1.9575,
+      "PC2": -1.1544
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_223",
+      "PC1": 1.5722,
+      "PC2": 0.323
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_224",
+      "PC1": 0.6334,
+      "PC2": 0.6214
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_225",
+      "PC1": -0.2759,
+      "PC2": 0.1769
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_226",
+      "PC1": 0.2401,
+      "PC2": -0.1248
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_227",
+      "PC1": -1.5797,
+      "PC2": 1.6386
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_228",
+      "PC1": -1.2077,
+      "PC2": 1.6285
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_229",
+      "PC1": -0.9749,
+      "PC2": 0.5515
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_230",
+      "PC1": -1.2463,
+      "PC2": 1.2718
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_231",
+      "PC1": 0.6056,
+      "PC2": 0.4087
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_232",
+      "PC1": 0.5186,
+      "PC2": -1.0365
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_233",
+      "PC1": 0.138,
+      "PC2": -0.8155
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_234",
+      "PC1": -1.2231,
+      "PC2": 1.0177
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_235",
+      "PC1": -1.4036,
+      "PC2": 1.9768
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_236",
+      "PC1": -0.8751,
+      "PC2": 2.4079
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_237",
+      "PC1": -0.3907,
+      "PC2": 3.1597
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_238",
+      "PC1": 0.8717,
+      "PC2": 2.1082
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_239",
+      "PC1": -0.34,
+      "PC2": 1.8595
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_240",
+      "PC1": -0.9618,
+      "PC2": 2.7254
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_241",
+      "PC1": 1.0976,
+      "PC2": 2.6463
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_242",
+      "PC1": 1.6455,
+      "PC2": 1.8273
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_243",
+      "PC1": -0.4587,
+      "PC2": 2.5039
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_244",
+      "PC1": 0.6979,
+      "PC2": -0.8499
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_245",
+      "PC1": 1.0452,
+      "PC2": -1.8969
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_246",
+      "PC1": 1.5352,
+      "PC2": -0.1613
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_247",
+      "PC1": 0.6604,
+      "PC2": -0.1619
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_248",
+      "PC1": -0.1464,
+      "PC2": -1.1042
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_249",
+      "PC1": -1.5181,
+      "PC2": -0.8731
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_250",
+      "PC1": -2.6105,
+      "PC2": -0.7382
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_251",
+      "PC1": -2.0856,
+      "PC2": -0.5614
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_252",
+      "PC1": -2.428,
+      "PC2": -1.0275
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_253",
+      "PC1": -2.0554,
+      "PC2": -1.8779
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_254",
+      "PC1": -2.7472,
+      "PC2": -2.161
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_255",
+      "PC1": -3.6179,
+      "PC2": -2.3082
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_256",
+      "PC1": -1.1245,
+      "PC2": -1.113
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_257",
+      "PC1": -0.6779,
+      "PC2": 0.7621
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_258",
+      "PC1": -1.9757,
+      "PC2": 0.5807
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_259",
+      "PC1": -0.496,
+      "PC2": 2.8281
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_260",
+      "PC1": 0.3739,
+      "PC2": 3.9754
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_261",
+      "PC1": -1.259,
+      "PC2": 0.6399
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_262",
+      "PC1": -2.8407,
+      "PC2": -0.3029
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_263",
+      "PC1": -1.7666,
+      "PC2": 1.1437
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_264",
+      "PC1": -0.8614,
+      "PC2": 3.3924
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_265",
+      "PC1": -3.0193,
+      "PC2": 2.9817
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_266",
+      "PC1": -3.2457,
+      "PC2": 0.4099
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_267",
+      "PC1": -1.6986,
+      "PC2": 0.6916
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_268",
+      "PC1": -2.461,
+      "PC2": 1.1213
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_269",
+      "PC1": -1.0584,
+      "PC2": 0.9063
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_270",
+      "PC1": 2.3404,
+      "PC2": 1.6669
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_271",
+      "PC1": 4.2621,
+      "PC2": 2.4837
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_272",
+      "PC1": 3.099,
+      "PC2": 2.1051
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_273",
+      "PC1": 1.2982,
+      "PC2": -0.0071
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_274",
+      "PC1": -1.0147,
+      "PC2": -0.5683
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_275",
+      "PC1": 2.3842,
+      "PC2": 1.0553
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_276",
+      "PC1": 3.3147,
+      "PC2": 1.4847
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_277",
+      "PC1": 0.9685,
+      "PC2": 0.9134
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_278",
+      "PC1": 0.7647,
+      "PC2": 0.8607
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_279",
+      "PC1": 1.7305,
+      "PC2": 0.585
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_280",
+      "PC1": 1.088,
+      "PC2": 1.3416
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_281",
+      "PC1": -0.4097,
+      "PC2": 1.1059
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_282",
+      "PC1": 0.4835,
+      "PC2": 1.3277
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_283",
+      "PC1": 1.0796,
+      "PC2": 0.7577
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_284",
+      "PC1": 0.6521,
+      "PC2": -2.904
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_285",
+      "PC1": 1.1052,
+      "PC2": -1.2753
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_286",
+      "PC1": 1.2559,
+      "PC2": 0.1365
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_287",
+      "PC1": 1.4131,
+      "PC2": -0.5308
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_288",
+      "PC1": 2.0986,
+      "PC2": 1.3612
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_289",
+      "PC1": 2.0726,
+      "PC2": 1.6366
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_290",
+      "PC1": 1.1763,
+      "PC2": 0.9865
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_291",
+      "PC1": 2.5679,
+      "PC2": 1.0626
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_292",
+      "PC1": 5.2569,
+      "PC2": 2.1499
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_293",
+      "PC1": 2.8417,
+      "PC2": 1.7267
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_294",
+      "PC1": 1.0498,
+      "PC2": 0.9529
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_295",
+      "PC1": 0.9124,
+      "PC2": 2.7701
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_296",
+      "PC1": 2.0997,
+      "PC2": 3.3598
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_297",
+      "PC1": 3.3297,
+      "PC2": 2.2231
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_298",
+      "PC1": 2.9425,
+      "PC2": 3.3357
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_299",
+      "PC1": 2.3133,
+      "PC2": 3.3886
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_300",
+      "PC1": 3.6395,
+      "PC2": 2.4408
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_301",
+      "PC1": 4.2235,
+      "PC2": 2.6563
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_302",
+      "PC1": 4.9737,
+      "PC2": 3.3987
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_303",
+      "PC1": 2.8646,
+      "PC2": 2.2996
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_304",
+      "PC1": 1.1242,
+      "PC2": 2.373
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_305",
+      "PC1": 1.8769,
+      "PC2": 3.8496
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_306",
+      "PC1": 1.3311,
+      "PC2": 2.7201
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_307",
+      "PC1": -0.5775,
+      "PC2": 3.495
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_308",
+      "PC1": 1.4458,
+      "PC2": 3.8945
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_309",
+      "PC1": 3.0265,
+      "PC2": 2.5526
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_310",
+      "PC1": 3.7317,
+      "PC2": 2.8683
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_311",
+      "PC1": 2.7678,
+      "PC2": -1.2514
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_312",
+      "PC1": -0.1661,
+      "PC2": -0.5848
+    },
+    {
+      "group": "anchor",
+      "label": "anchor_313",
+      "PC1": -1.4583,
+      "PC2": 1.4971
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_0",
+      "PC1": 5.6544,
+      "PC2": 0.625
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_1",
+      "PC1": 4.0558,
+      "PC2": -1.2476
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_2",
+      "PC1": 2.9325,
+      "PC2": -4.6134
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_3",
+      "PC1": 2.6589,
+      "PC2": -4.5468
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_4",
+      "PC1": 2.9361,
+      "PC2": -2.9645
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_5",
+      "PC1": 2.417,
+      "PC2": -1.9631
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_6",
+      "PC1": 2.3549,
+      "PC2": -1.8478
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_7",
+      "PC1": 2.3716,
+      "PC2": -1.8488
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_8",
+      "PC1": 2.9637,
+      "PC2": -2.9115
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_9",
+      "PC1": 2.7251,
+      "PC2": -2.2268
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_10",
+      "PC1": 1.3909,
+      "PC2": -1.5282
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_11",
+      "PC1": 0.6547,
+      "PC2": -1.9932
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_12",
+      "PC1": 0.4705,
+      "PC2": -1.6874
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_13",
+      "PC1": 0.8224,
+      "PC2": -0.6277
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_14",
+      "PC1": 1.9813,
+      "PC2": 0.5168
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_15",
+      "PC1": 1.2997,
+      "PC2": 0.7274
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_16",
+      "PC1": 0.7145,
+      "PC2": 1.1537
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_17",
+      "PC1": 2.2821,
+      "PC2": 1.4735
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_18",
+      "PC1": 2.0725,
+      "PC2": 1.6521
+    },
+    {
+      "group": "colossians",
+      "label": "colossians_19",
+      "PC1": 2.0489,
+      "PC2": 0.9101
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_0",
+      "PC1": 6.4692,
+      "PC2": 2.4658
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_1",
+      "PC1": 6.2389,
+      "PC2": 1.028
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_2",
+      "PC1": 6.2721,
+      "PC2": 2.434
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_3",
+      "PC1": 2.0434,
+      "PC2": 1.055
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_4",
+      "PC1": -0.3095,
+      "PC2": -1.7344
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_5",
+      "PC1": 2.4476,
+      "PC2": 0.5574
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_6",
+      "PC1": 3.8312,
+      "PC2": 3.9853
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_7",
+      "PC1": 3.6698,
+      "PC2": 3.9585
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_8",
+      "PC1": 2.0959,
+      "PC2": 5.2091
+    },
+    {
+      "group": "2thessalonians",
+      "label": "2thessalonians_9",
+      "PC1": 0.877,
+      "PC2": 5.1058
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_0",
+      "PC1": 7.6111,
+      "PC2": -3.4295
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_1",
+      "PC1": 5.4486,
+      "PC2": -7.2823
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_2",
+      "PC1": 5.3631,
+      "PC2": -3.7092
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_3",
+      "PC1": 4.2489,
+      "PC2": -2.891
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_4",
+      "PC1": 3.2787,
+      "PC2": -4.3785
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_5",
+      "PC1": 4.3564,
+      "PC2": -2.8703
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_6",
+      "PC1": 3.0898,
+      "PC2": -0.9624
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_7",
+      "PC1": 1.682,
+      "PC2": -0.2071
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_8",
+      "PC1": 2.3689,
+      "PC2": -2.031
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_9",
+      "PC1": 3.1392,
+      "PC2": -1.8575
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_10",
+      "PC1": 3.5448,
+      "PC2": -1.9667
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_11",
+      "PC1": 3.6337,
+      "PC2": -3.7891
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_12",
+      "PC1": 3.8316,
+      "PC2": -3.2163
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_13",
+      "PC1": 3.106,
+      "PC2": -2.5355
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_14",
+      "PC1": 1.6963,
+      "PC2": -1.5679
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_15",
+      "PC1": 1.3667,
+      "PC2": -1.6599
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_16",
+      "PC1": 1.9448,
+      "PC2": -2.4607
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_17",
+      "PC1": 1.8634,
+      "PC2": -2.8145
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_18",
+      "PC1": 0.8408,
+      "PC2": -2.0233
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_19",
+      "PC1": 0.53,
+      "PC2": -0.3262
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_20",
+      "PC1": 0.6324,
+      "PC2": 1.315
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_21",
+      "PC1": -0.9247,
+      "PC2": 0.9137
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_22",
+      "PC1": -2.3242,
+      "PC2": -0.37
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_23",
+      "PC1": 0.1933,
+      "PC2": 0.7738
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_24",
+      "PC1": 1.4528,
+      "PC2": 0.9731
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_25",
+      "PC1": -0.4126,
+      "PC2": 0.4605
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_26",
+      "PC1": 0.4292,
+      "PC2": 0.9023
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_27",
+      "PC1": 0.898,
+      "PC2": 0.7482
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_28",
+      "PC1": 1.4478,
+      "PC2": 0.3178
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_29",
+      "PC1": 3.1709,
+      "PC2": -1.3712
+    },
+    {
+      "group": "ephesians",
+      "label": "ephesians_30",
+      "PC1": 3.602,
+      "PC2": -1.3978
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_0",
+      "PC1": 1.4103,
+      "PC2": 0.4578
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_1",
+      "PC1": 1.3094,
+      "PC2": 0.5493
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_2",
+      "PC1": 2.2079,
+      "PC2": -1.0001
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_3",
+      "PC1": 1.5707,
+      "PC2": -1.2457
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_4",
+      "PC1": 0.3179,
+      "PC2": 0.339
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_5",
+      "PC1": -1.8382,
+      "PC2": 0.1476
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_6",
+      "PC1": -1.7653,
+      "PC2": 0.4141
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_7",
+      "PC1": 0.269,
+      "PC2": 0.5131
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_8",
+      "PC1": 1.0034,
+      "PC2": -0.6499
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_9",
+      "PC1": 0.448,
+      "PC2": -1.73
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_10",
+      "PC1": 0.4068,
+      "PC2": -1.5697
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_11",
+      "PC1": -0.6016,
+      "PC2": 0.7007
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_12",
+      "PC1": -2.633,
+      "PC2": 1.8717
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_13",
+      "PC1": -2.615,
+      "PC2": 0.8812
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_14",
+      "PC1": -1.5904,
+      "PC2": -0.1247
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_15",
+      "PC1": -1.3488,
+      "PC2": -0.8148
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_16",
+      "PC1": -0.2254,
+      "PC2": 0.6364
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_17",
+      "PC1": 0.0972,
+      "PC2": 0.6214
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_18",
+      "PC1": 1.5804,
+      "PC2": -1.5035
+    },
+    {
+      "group": "1timothy",
+      "label": "1timothy_19",
+      "PC1": 2.2585,
+      "PC2": -2.5913
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_0",
+      "PC1": 3.0697,
+      "PC2": -1.3631
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_1",
+      "PC1": 0.9376,
+      "PC2": -1.7927
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_2",
+      "PC1": 1.3569,
+      "PC2": -1.4936
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_3",
+      "PC1": 0.9359,
+      "PC2": 0.4629
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_4",
+      "PC1": 0.1774,
+      "PC2": 0.4088
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_5",
+      "PC1": -0.5039,
+      "PC2": -1.1521
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_6",
+      "PC1": -0.8253,
+      "PC2": -0.9188
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_7",
+      "PC1": -0.7439,
+      "PC2": -0.404
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_8",
+      "PC1": -1.2253,
+      "PC2": 0.0705
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_9",
+      "PC1": -0.8755,
+      "PC2": 0.3023
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_10",
+      "PC1": 1.3997,
+      "PC2": 0.1238
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_11",
+      "PC1": 2.0804,
+      "PC2": -1.5083
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_12",
+      "PC1": 0.1815,
+      "PC2": -2.0389
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_13",
+      "PC1": -0.8462,
+      "PC2": -1.598
+    },
+    {
+      "group": "2timothy",
+      "label": "2timothy_14",
+      "PC1": -0.2558,
+      "PC2": -2.2365
+    },
+    {
+      "group": "titus",
+      "label": "titus_0",
+      "PC1": 0.1079,
+      "PC2": -0.1663
+    },
+    {
+      "group": "titus",
+      "label": "titus_1",
+      "PC1": -1.5869,
+      "PC2": -0.315
+    },
+    {
+      "group": "titus",
+      "label": "titus_2",
+      "PC1": -1.1733,
+      "PC2": -0.229
+    },
+    {
+      "group": "titus",
+      "label": "titus_3",
+      "PC1": 0.4447,
+      "PC2": 0.5138
+    },
+    {
+      "group": "titus",
+      "label": "titus_4",
+      "PC1": 2.4134,
+      "PC2": -0.1024
+    },
+    {
+      "group": "titus",
+      "label": "titus_5",
+      "PC1": 1.8962,
+      "PC2": -0.5295
+    },
+    {
+      "group": "titus",
+      "label": "titus_6",
+      "PC1": 1.1825,
+      "PC2": 0.2887
+    },
+    {
+      "group": "titus",
+      "label": "titus_7",
+      "PC1": 0.7887,
+      "PC2": 0.5709
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_0",
+      "PC1": 0.8688,
+      "PC2": -3.8201
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_1",
+      "PC1": -0.7555,
+      "PC2": -2.6536
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_2",
+      "PC1": -0.7377,
+      "PC2": -1.5337
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_3",
+      "PC1": 0.1276,
+      "PC2": -1.9738
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_4",
+      "PC1": 0.1853,
+      "PC2": -3.3505
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_5",
+      "PC1": -0.1876,
+      "PC2": -3.1777
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_6",
+      "PC1": 0.0697,
+      "PC2": -2.3301
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_7",
+      "PC1": -0.5164,
+      "PC2": -2.4479
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_8",
+      "PC1": 0.2694,
+      "PC2": -0.6377
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_9",
+      "PC1": 0.2201,
+      "PC2": 0.0167
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_10",
+      "PC1": -1.4198,
+      "PC2": -0.5247
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_11",
+      "PC1": -0.2429,
+      "PC2": -0.6026
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_12",
+      "PC1": 0.9862,
+      "PC2": -1.8179
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_13",
+      "PC1": 0.4843,
+      "PC2": -2.3828
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_14",
+      "PC1": 0.5972,
+      "PC2": -1.2213
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_15",
+      "PC1": 0.9102,
+      "PC2": -1.0615
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_16",
+      "PC1": 0.9361,
+      "PC2": -2.292
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_17",
+      "PC1": 0.8302,
+      "PC2": -2.1207
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_18",
+      "PC1": 0.809,
+      "PC2": -1.1884
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_19",
+      "PC1": 0.3879,
+      "PC2": -1.0302
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_20",
+      "PC1": 0.2867,
+      "PC2": -2.0336
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_21",
+      "PC1": 1.2812,
+      "PC2": -2.4985
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_22",
+      "PC1": -0.898,
+      "PC2": -2.6689
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_23",
+      "PC1": -2.5303,
+      "PC2": -2.6734
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_24",
+      "PC1": -2.0529,
+      "PC2": -2.0423
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_25",
+      "PC1": -2.5206,
+      "PC2": -1.7111
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_26",
+      "PC1": -0.7694,
+      "PC2": -2.4292
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_27",
+      "PC1": 0.6257,
+      "PC2": -3.0864
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_28",
+      "PC1": -1.1303,
+      "PC2": -2.4593
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_29",
+      "PC1": -2.5751,
+      "PC2": -2.6511
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_30",
+      "PC1": -1.4504,
+      "PC2": -3.1673
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_31",
+      "PC1": -0.8656,
+      "PC2": -2.241
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_32",
+      "PC1": -1.2042,
+      "PC2": -2.0712
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_33",
+      "PC1": -1.104,
+      "PC2": -2.5294
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_34",
+      "PC1": 0.1469,
+      "PC2": -2.1509
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_35",
+      "PC1": 0.5823,
+      "PC2": -1.9714
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_36",
+      "PC1": -0.4866,
+      "PC2": -2.4858
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_37",
+      "PC1": -0.2162,
+      "PC2": -3.2175
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_38",
+      "PC1": -0.2847,
+      "PC2": -2.0152
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_39",
+      "PC1": 0.0989,
+      "PC2": -0.8644
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_40",
+      "PC1": 0.462,
+      "PC2": -2.1107
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_41",
+      "PC1": 1.1507,
+      "PC2": -3.0892
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_42",
+      "PC1": 0.9388,
+      "PC2": -1.2255
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_43",
+      "PC1": -0.4703,
+      "PC2": -0.4412
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_44",
+      "PC1": -1.1478,
+      "PC2": -0.9318
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_45",
+      "PC1": -1.4901,
+      "PC2": -1.6101
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_46",
+      "PC1": -0.6747,
+      "PC2": -3.5746
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_47",
+      "PC1": 0.4507,
+      "PC2": -3.4636
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_48",
+      "PC1": -1.041,
+      "PC2": -2.1785
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_49",
+      "PC1": -0.6068,
+      "PC2": -2.4648
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_50",
+      "PC1": 0.6189,
+      "PC2": -3.0139
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_51",
+      "PC1": -0.6275,
+      "PC2": -2.616
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_52",
+      "PC1": -0.6651,
+      "PC2": -1.5816
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_53",
+      "PC1": 1.1587,
+      "PC2": -2.0433
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_54",
+      "PC1": 1.7262,
+      "PC2": -1.533
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_55",
+      "PC1": -0.8409,
+      "PC2": -0.2782
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_56",
+      "PC1": -1.0502,
+      "PC2": -0.3838
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_57",
+      "PC1": -0.7035,
+      "PC2": 0.2372
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_58",
+      "PC1": -0.9157,
+      "PC2": 0.3248
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_59",
+      "PC1": -1.0328,
+      "PC2": -0.3866
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_60",
+      "PC1": -0.7649,
+      "PC2": -0.6821
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_61",
+      "PC1": -0.1923,
+      "PC2": -1.0786
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_62",
+      "PC1": -0.3688,
+      "PC2": -2.4262
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_63",
+      "PC1": 0.3137,
+      "PC2": -0.6571
+    },
+    {
+      "group": "hebrews",
+      "label": "hebrews_64",
+      "PC1": 2.2705,
+      "PC2": 1.1952
+    }
+  ]
+}

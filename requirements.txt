@@ -1,0 +1,7 @@
+transformers>=4.30.0
+torch>=2.0.0
+scikit-learn
+pandas
+seaborn
+matplotlib
+requests
