@@ -120,8 +120,21 @@ significance, while Ancient-Greek-BERT shows the same trend.
 ## Classic Stylometry Baseline
 
 Classic stylometry (PCA on MFW z-scores with 100 MFW) shows high lexical similarity 
-across all texts, confirming surface-level stylistic consistency. Classic methods
-cannot distinguish disputed letters from Paul, motivating the neural approach.
+across all texts, confirming surface-level stylistic consistency:
+
+| Text | PCA Cluster | Overlap with Paul |
+|------|-------------|-------------------|
+| Colossians | Within Paul's cluster | High |
+| 2 Thessalonians | Within Paul's cluster | High |
+| Ephesians | Within Paul's cluster | High |
+| 1 Timothy | Within Paul's cluster | High |
+| 2 Timothy | Within Paul's cluster | High |
+| Titus | Within Paul's cluster | High |
+| Hebrews | Slightly offset | Moderate |
+
+Classic stylometry cannot distinguish disputed letters from Paul, demonstrating 
+either authentic authorship across the corpus OR successful stylistic mimicry. 
+This motivates the neural probe approach.
 
 ## Visualization
 
