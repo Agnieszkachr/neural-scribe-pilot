@@ -22,7 +22,18 @@ statistical_check.py
 classic_results.csv
 neural_results.csv
 double_dissociation.png
+
+# Root-level gradient scatter (duplicate of results/)
 gradient_scatter.png
+
+# Temporary comparison directories
+results_koine/
+results_comparison/
+
+# Embeddings (large binary files)
+results/embeddings_koine.npz
+results/embeddings_ancient.npz
+results/embeddings.npz
 
 # Virtual environments
 venv/
@@ -34,11 +45,6 @@ env/
 .idea/
 *.swp
 *.swo
-
-# Data cache (auto-downloaded)
-
-# Embeddings (large binary files)
-results/embeddings.npz
 
 # OS
 .DS_Store

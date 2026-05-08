@@ -1,5 +1,5 @@
-/* ===== The Neural Scribe — Chart Visualizations ===== */
-/* All data values from results/neural_results.json & classic_results.csv */
+/* ===== The Neural Scribe v2.0 — Chart Visualizations ===== */
+/* Koine-BERT v0.1 (primary) + Ancient-Greek-BERT (robustness) */
 
 (function() {
   'use strict';
@@ -33,11 +33,22 @@
     drawBorder: false,
   };
 
-  // ─── 1. Authorship Gradient Scatter ──────────────────
+  // ─── 1. Authorship Gradient Scatter (Koine-BERT) ──────
   const gradientCtx = document.getElementById('gradientChart');
   if (gradientCtx) {
-    // Real data: rejection rate (%) vs mean sigma
-    const texts = [
+    // Koine-BERT v0.1 data
+    const kTexts = [
+      { label: 'Colossians',      x: 40,  y: 0.34  },
+      { label: '2 Thessalonians', x: 50,  y: -0.20 },
+      { label: 'Ephesians',       x: 60,  y: 0.33  },
+      { label: '1 Timothy',       x: 80,  y: 0.74  },
+      { label: '2 Timothy',       x: 80,  y: 0.48  },
+      { label: 'Titus',           x: 80,  y: 1.25  },
+      { label: 'Hebrews',         x: 100, y: 0.79  },
+    ];
+
+    // Ancient-Greek-BERT data (robustness)
+    const aTexts = [
       { label: 'Colossians',      x: 40,  y: 0.24  },
       { label: '2 Thessalonians', x: 50,  y: -0.22 },
       { label: 'Ephesians',       x: 60,  y: -0.03 },
@@ -47,25 +58,31 @@
       { label: 'Hebrews',         x: 100, y: 1.21  },
     ];
 
-    // Least-squares regression
-    const n = texts.length;
-    const sx = texts.reduce((a,t)=>a+t.x,0), sy = texts.reduce((a,t)=>a+t.y,0);
-    const mx = sx/n, my = sy/n;
-    let num=0, den=0;
-    texts.forEach(t => { num += (t.x-mx)*(t.y-my); den += (t.x-mx)**2; });
-    const slope = num/den, intercept = my - slope*mx;
+    // Least-squares regression for Koine-BERT
+    function lsq(pts) {
+      const n = pts.length;
+      const sx = pts.reduce((a,t)=>a+t.x,0), sy = pts.reduce((a,t)=>a+t.y,0);
+      const mx = sx/n, my = sy/n;
+      let num=0, den=0;
+      pts.forEach(t => { num += (t.x-mx)*(t.y-my); den += (t.x-mx)**2; });
+      const slope = num/den, intercept = my - slope*mx;
+      return { slope, intercept };
+    }
+
+    const kReg = lsq(kTexts);
+    const aReg = lsq(aTexts);
 
     new Chart(gradientCtx, {
       type: 'scatter',
       data: {
         datasets: [
           {
-            label: 'Disputed texts',
-            data: texts.map(t => ({ x: t.x, y: t.y })),
-            backgroundColor: texts.map(t =>
+            label: 'Koine-BERT (ρ = 0.778, p = 0.039)',
+            data: kTexts.map(t => ({ x: t.x, y: t.y })),
+            backgroundColor: kTexts.map(t =>
               t.y > 0.5 ? C.rose : t.y < 0 ? C.green : C.amber
             ),
-            borderColor: texts.map(t =>
+            borderColor: kTexts.map(t =>
               t.y > 0.5 ? C.rose : t.y < 0 ? C.green : C.amber
             ),
             pointRadius: 9,
@@ -73,12 +90,31 @@
             pointStyle: 'circle',
           },
           {
-            label: 'Trend (ρ = 0.704)',
-            data: [{x:30, y:slope*30+intercept}, {x:105, y:slope*105+intercept}],
+            label: 'Koine-BERT trend',
+            data: [{x:30, y:kReg.slope*30+kReg.intercept}, {x:105, y:kReg.slope*105+kReg.intercept}],
             type: 'line',
             borderColor: C.accentLight,
-            borderDash: [8,5],
             borderWidth: 2,
+            pointRadius: 0,
+            fill: false,
+          },
+          {
+            label: 'Ancient-Greek-BERT (ρ = 0.704, p = 0.077)',
+            data: aTexts.map(t => ({ x: t.x, y: t.y })),
+            backgroundColor: 'transparent',
+            borderColor: C.amber,
+            pointRadius: 7,
+            pointHoverRadius: 10,
+            pointStyle: 'circle',
+            borderWidth: 2,
+          },
+          {
+            label: 'AG-BERT trend',
+            data: [{x:30, y:aReg.slope*30+aReg.intercept}, {x:105, y:aReg.slope*105+aReg.intercept}],
+            type: 'line',
+            borderColor: C.amber,
+            borderDash: [8,5],
+            borderWidth: 1.5,
             pointRadius: 0,
             fill: false,
           }
@@ -105,14 +141,15 @@
           tooltip: {
             callbacks: {
               label: (ctx) => {
-                if (ctx.datasetIndex === 1) return '';
-                const t = texts[ctx.dataIndex];
+                if (ctx.datasetIndex === 1 || ctx.datasetIndex === 3) return '';
+                const pts = ctx.datasetIndex === 0 ? kTexts : aTexts;
+                const t = pts[ctx.dataIndex];
                 return `${t.label}: ${t.y}σ at ${t.x}% rejection`;
               }
             }
           },
           annotation: {
-            annotations: Object.fromEntries(texts.map((t,i) => [
+            annotations: Object.fromEntries(kTexts.map((t,i) => [
               'label'+i,
               {
                 type: 'label',
@@ -132,18 +169,18 @@
     });
   }
 
-  // ─── 2. Statistical Distance Bar Chart ────────────────
+  // ─── 2. Statistical Distance Bar Chart (Koine-BERT) ───
   const distCtx = document.getElementById('distanceChart');
   if (distCtx) {
     const labels = ['Paul\n(baseline)', 'Colossians', '2 Thess.', 'Ephesians', '1 Timothy', '2 Timothy', 'Titus', 'Hebrews'];
-    const means  = [0.00, 0.24, -0.22, -0.03, 0.79, 0.11, 1.11, 1.21];
-    const ciLo   = [0, -0.20, -0.70, -0.39, 0.39, -0.61, -0.10, 0.75];
-    const ciHi   = [0, 0.69, 0.26, 0.33, 1.20, 0.83, 2.32, 1.67];
+    const means  = [0.00, 0.34, -0.20, 0.33, 0.74, 0.48, 1.25, 0.79];
+    const ciLo   = [0, -0.19, -0.72, -0.08, 0.35, -0.26, 0.20, 0.46];
+    const ciHi   = [0, 0.86, 0.32, 0.74, 1.14, 1.21, 2.31, 1.12];
 
     const barColors = means.map((m,i) => {
       if (i === 0) return C.accentLight;
-      if (i === 4 || i === 7) return C.rose; // significant
-      if (i === 6) return C.amber; // marginal
+      if (i === 4) return C.rose;        // 1 Timothy: Significant
+      if (i === 6 || i === 7) return C.amber; // Titus, Hebrews: Moderate
       return C.muted;
     });
 
@@ -229,13 +266,13 @@
     });
   }
 
-  // ─── 3. Chunk Distribution Grouped Bar ────────────────
+  // ─── 3. Chunk Distribution Grouped Bar (Koine-BERT) ───
   const distribCtx = document.getElementById('distributionChart');
   if (distribCtx) {
     const distLabels = ['Colossians', '2 Thess.', 'Ephesians', '1 Timothy', '2 Timothy', 'Titus', 'Hebrews'];
-    const p75 = [35.0, 20.0, 16.1, 65.0, 33.3, 50.0, 58.5];
-    const p90 = [10.0,  0.0,  9.7, 20.0, 20.0, 37.5, 43.1];
-    const p95 = [10.0,  0.0,  9.7, 10.0, 20.0, 37.5, 38.5];
+    const p75 = [40.0, 20.0, 41.9, 70.0, 33.3, 75.0, 58.5];
+    const p90 = [15.0, 10.0, 12.9, 30.0, 26.7, 37.5, 36.9];
+    const p95 = [10.0,  0.0,  9.7, 10.0, 20.0, 37.5, 23.1];
 
     new Chart(distribCtx, {
       type: 'bar',
@@ -276,7 +313,7 @@
           x: { grid: { display: false } },
           y: {
             title: { display: true, text: '% of Chunks Exceeding Threshold', font: { weight: '500' } },
-            max: 75,
+            max: 85,
             grid: gridOpts,
           }
         },
@@ -303,7 +340,7 @@
   // ─── 4. Classic PCA Scatter ───────────────────────────
   const pcaCtx = document.getElementById('pcaChart');
   if (pcaCtx) {
-    // Data from classic_results.csv
+    // Data from classic_results.csv (representative centroids)
     const pcaPaul = [
       {x:-0.0058, y:-0.0087}, {x:-0.0109, y:-0.0098},
       {x:0.0049, y:-0.0105}, {x:-0.0153, y:-0.0071},
@@ -386,14 +423,13 @@
     });
   }
 
-  // ─── 5. Dissociation Chart ────────────────────────────
+  // ─── 5. Dissociation Chart (Koine-BERT) ───────────────
   const dissCtx = document.getElementById('dissociationChart');
   if (dissCtx) {
     const dissLabels = ['Colossians', '2 Thess.', 'Ephesians', '1 Timothy', '2 Timothy', 'Titus', 'Hebrews'];
-    // Neural distances (σ)
-    const neuralDist = [0.24, -0.22, -0.03, 0.79, 0.11, 1.11, 1.21];
-    // Classic PCA distance ~ euclidean from Paul centroid (normalised 0-1 for comparison)
-    // Computed from classic_results.csv: all within-cluster except Hebrews slight offset
+    // Koine-BERT neural distances (σ)
+    const neuralDist = [0.34, -0.20, 0.33, 0.74, 0.48, 1.25, 0.79];
+    // Classic PCA distance ~ euclidean from Paul centroid (normalised 0-1)
     const classicSim = [0.95, 0.97, 0.96, 0.95, 0.96, 0.94, 0.82];
 
     new Chart(dissCtx, {
@@ -402,7 +438,7 @@
         labels: dissLabels,
         datasets: [
           {
-            label: 'Neural Distance (σ)',
+            label: 'Neural Distance (σ) — Koine-BERT',
             data: neuralDist,
             backgroundColor: C.accent + 'aa',
             borderColor: C.accent,
@@ -446,31 +482,33 @@
     });
   }
 
-  // ─── 6. Neural PCA Embedding scatter ──────────────────
+  // ─── 6. Neural PCA Embedding scatter (Koine-BERT) ─────
   const embCtx = document.getElementById('embeddingChart');
   if (embCtx) {
-    // Sampled from neural_results.csv (representative subsample for performance)
+    // Sampled from Koine-BERT embeddings PCA (v2.0)
     const paulPts = [
-      {x:2.83,y:2.66},{x:4.98,y:0.56},{x:4.77,y:-0.09},{x:3.35,y:-1.22},{x:3.22,y:0.18},
-      {x:4.81,y:0.13},{x:3.90,y:-0.87},{x:4.48,y:-3.19},{x:3.59,y:1.04},{x:4.90,y:-1.06},
-      {x:5.38,y:-0.74},{x:5.85,y:-0.93},{x:4.40,y:1.45},{x:3.69,y:1.27},{x:4.96,y:0.05},
-      {x:5.00,y:-0.67},{x:5.74,y:0.36},{x:5.54,y:-0.70},{x:3.93,y:0.24},{x:4.53,y:-0.96},
-      {x:5.37,y:-0.03},{x:3.34,y:1.26},{x:5.12,y:-0.40},{x:5.06,y:1.04},{x:4.30,y:-0.74},
-      {x:5.31,y:0.30},{x:4.74,y:0.95},{x:3.09,y:0.07},{x:5.28,y:0.76},{x:3.92,y:-0.35},
-      {x:4.57,y:0.71},{x:3.87,y:-0.66},{x:3.66,y:-0.09},{x:4.34,y:-2.27},{x:4.67,y:0.62},
-      {x:2.74,y:-1.72},{x:0.40,y:-0.55},{x:3.80,y:-0.12},{x:3.93,y:0.47},{x:6.18,y:-0.55},
-      {x:3.73,y:-1.24},{x:6.59,y:-1.60},{x:3.15,y:-0.72},{x:4.54,y:1.93},{x:4.89,y:-1.95},
+      {x:2.56,y:1.84},{x:-1.15,y:0.97},{x:-1.69,y:-0.71},{x:-0.81,y:2.25},{x:-1.15,y:2.42},
+      {x:-1.61,y:0.67},{x:-0.98,y:0.08},{x:0.25,y:0.85},{x:-1.35,y:0.38},{x:-1.39,y:-0.34},
+      {x:2.08,y:0.96},{x:-2.34,y:-0.31},{x:1.89,y:0.24},{x:1.44,y:-0.12},{x:-0.0,y:0.31},
+      {x:-2.05,y:-0.43},{x:0.37,y:-1.07},{x:-1.54,y:-0.8},{x:-1.02,y:-0.36},{x:-0.95,y:-1.13},
+      {x:-0.61,y:-0.63},{x:-0.22,y:-2.09},{x:-2.53,y:-0.44},{x:-1.41,y:-2.31},{x:0.53,y:-1.51},
+      {x:-2.79,y:0.76},{x:2.61,y:-0.58},{x:1.75,y:-1.65},{x:-0.26,y:0.84},{x:1.56,y:-0.15},
+      {x:2.16,y:-0.26},{x:1.35,y:1.02},{x:0.64,y:-0.33},{x:0.02,y:-1.6},{x:0.21,y:-2.3},
+      {x:0.1,y:-1.14},{x:-0.69,y:0.14},{x:0.73,y:-2.05},{x:-0.34,y:-0.82},{x:1.51,y:-0.25},
+      {x:1.62,y:-1.2},{x:1.39,y:0.72},{x:1.42,y:0.2},{x:3.22,y:0.5},{x:2.22,y:-1.21},
     ];
     const hebPts = [
-      {x:-2.29,y:-0.09},{x:-4.31,y:-0.57},{x:-2.89,y:-0.60},{x:-1.56,y:-0.78},{x:-2.13,y:-0.04},
-      {x:-3.51,y:-1.25},{x:-2.12,y:0.03},{x:-3.73,y:-0.16},{x:-3.78,y:-1.16},{x:-3.84,y:-1.40},
-      {x:-2.92,y:-0.36},{x:-2.46,y:-1.29},{x:-4.52,y:-1.36},{x:-3.92,y:-0.62},{x:-4.20,y:0.38},
-      {x:-3.43,y:-1.88},{x:-4.44,y:0.43},{x:-4.18,y:-1.01},{x:-3.02,y:0.30},{x:-2.94,y:0.30},
+      {x:-0.84,y:2.37},{x:-0.85,y:1.16},{x:-0.04,y:1.12},{x:-0.07,y:-0.4},{x:-1.28,y:0.44},
+      {x:-0.26,y:1.8},{x:0.11,y:2.41},{x:-0.52,y:2.43},{x:-2.17,y:1.55},{x:-1.06,y:2.49},
+      {x:-1.09,y:-0.04},{x:-1.55,y:2.43},{x:-1.62,y:2.46},{x:-1.73,y:0.46},{x:0.51,y:1.39},
+      {x:-0.22,y:0.17},{x:-1.11,y:1.63},{x:-2.09,y:0.72},{x:0.57,y:1.04},{x:-0.73,y:0.12},
+      {x:0.13,y:-0.52},{x:1.24,y:0.96},
     ];
     const colPts = [
-      {x:0.21,y:9.67},{x:1.61,y:11.30},{x:0.60,y:10.63},{x:1.19,y:11.09},{x:0.20,y:9.42},
-      {x:-0.63,y:9.69},{x:0.69,y:11.72},{x:-0.38,y:10.12},{x:-1.40,y:7.30},{x:-0.79,y:9.57},
-      {x:0.62,y:11.25},
+      {x:3.79,y:1.5},{x:2.93,y:2.48},{x:1.5,y:3.98},{x:-0.32,y:3.26},{x:0.82,y:1.41},
+      {x:1.36,y:1.27},{x:1.68,y:0.89},{x:2.29,y:-0.15},{x:1.33,y:1.0},{x:0.46,y:1.81},
+      {x:-0.11,y:1.18},{x:-0.28,y:0.59},{x:-0.02,y:0.05},{x:0.62,y:0.11},{x:2.06,y:0.64},
+      {x:2.41,y:-0.24},{x:1.53,y:-0.71},{x:1.99,y:-0.4},{x:2.14,y:-0.25},{x:1.83,y:-0.14},
     ];
 
     new Chart(embCtx, {
@@ -511,11 +549,11 @@
         aspectRatio: 1.6,
         scales: {
           x: {
-            title: { display: true, text: 'PC1', font: { weight: '500' } },
+            title: { display: true, text: 'PC1 (10.86%)', font: { weight: '500' } },
             grid: gridOpts,
           },
           y: {
-            title: { display: true, text: 'PC2', font: { weight: '500' } },
+            title: { display: true, text: 'PC2 (9.00%)', font: { weight: '500' } },
             grid: gridOpts,
           }
         },
