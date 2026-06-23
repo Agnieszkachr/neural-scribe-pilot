@@ -6,7 +6,7 @@
 
 ## What's New in v2.0
 
-- **Koine-BERT v0.1** (domain-adapted to biblical Greek) as primary embedding model
+- **Koine-Greek-BERT v0.1** (domain-adapted to biblical Greek) as primary embedding model
 - **Statistically significant gradient**: ρ = 0.778, p = 0.039
 - **Cross-model robustness check** with Ancient-Greek-BERT confirms the trend
 - **Titus** upgraded from marginal to Moderate divergence (p = 0.027)
