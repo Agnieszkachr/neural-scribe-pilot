@@ -6,7 +6,7 @@
 
 ## What's New in v2.0
 
-- **Koine-BERT** (domain-adapted to biblical Greek) as primary embedding model
+- **Koine-Greek-BERT v0.1** (domain-adapted to biblical Greek) as primary embedding model
 - **Statistically significant gradient**: ρ = 0.778, p = 0.039
 - **Cross-model robustness check** with Ancient-Greek-BERT confirms the trend
 - **Titus** upgraded from marginal to Moderate divergence (p = 0.027)
@@ -42,7 +42,7 @@ Cosine distance with mean pooling, normalized by intra-Pauline variance:
 - Negative values indicate texts *closer* to centroid than typical Pauline texts
 
 ### Text Normalization (Koine-BERT)
-Koine-BERT requires monotonic, accent-stripped, lowercase input. All texts are
+Koine-Greek-BERT v0.1 requires monotonic, accent-stripped, lowercase input. All texts are
 pre-normalized using NFD decomposition with combining-mark removal before
 tokenization. Without this step, accented Greek characters produce `[UNK]`
 tokens and the model output is meaningless.
@@ -76,7 +76,7 @@ Cosine distance was selected based on:
 
 **Gradient Correlation** (n=7 texts): Spearman ρ = 0.778, **p = 0.039** ✦
 
-### Chunk Distribution Analysis (Koine-BERT)
+### Chunk Distribution Analysis (Koine-Greek-BERT)
 
 | Text | % > P75 | % > P90 | % > P95 |
 |------|---------|---------|---------| 
@@ -105,7 +105,7 @@ Cosine distance was selected based on:
 
 ### Cross-Model Summary
 
-| Metric | Koine-BERT | Ancient-Greek-BERT |
+| Metric | Koine-Greek-BERT | Ancient-Greek-BERT |
 |--------|------------|---------------------|
 | Gradient ρ | **0.778** | 0.704 |
 | Gradient p | **0.039** ✦ | 0.077 |
@@ -114,7 +114,7 @@ Cosine distance was selected based on:
 | Hebrews | Moderate | **Significant** |
 
 Both models converge on the same core finding: semantic distance correlates
-with scholarly consensus. The domain-adapted Koine-BERT achieves statistical
+with scholarly consensus. The domain-adapted Koine-Greek-BERT v0.1 achieves statistical
 significance, while Ancient-Greek-BERT shows the same trend.
 
 ## Classic Stylometry Baseline
@@ -231,7 +231,7 @@ neural-scribe-pilot/
 
 ## Technical Details
 
-- **Primary Model**: [Koine-Greek-BERT](https://huggingface.co/ABeZet/Koine-Greek-BERT) (domain-adapted from Greek-BERT on biblical Koine)
+- **Primary Model**: [Koine-Greek-BERT](https://huggingface.co/ABeZet/Koine-Greek-BERT/tree/4aa2a8d) (domain-adapted from Greek-BERT on biblical Koine)
 - **Robustness Model**: [Ancient Greek BERT](https://huggingface.co/pranaydeeps/Ancient-Greek-BERT) (`pranaydeeps/Ancient-Greek-BERT`)
 - **Normalization**: NFD accent-stripping + lowercase (Koine-BERT only)
 - **Pooling**: Mean pooling with attention mask
