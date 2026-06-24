@@ -41,7 +41,8 @@ from data_loader import load_corpus
 MODEL_REGISTRY = {
     'koine': {
         'name': 'Koine-BERT v0.1',
-        'path': str(Path(r'C:\DATA\DOCS\POSTDOC\PROJECTS_GIT\Koine-BERT\koine-bert-v0.1')),
+        'path': 'ABeZet/Koine-Greek-BERT',
+        'revision': '4aa2a8d015234409981029adeabe66627284a7ef',
         'normalize': True,
         'suffix': 'koine',
     },
@@ -222,6 +223,7 @@ def run_single_model(model_key, corpus):
     cfg = MODEL_REGISTRY[model_key]
     model_name = cfg['name']
     model_path = cfg['path']
+    revision = cfg.get('revision')
     normalize = cfg['normalize']
     suffix = cfg['suffix']
 
@@ -231,8 +233,8 @@ def run_single_model(model_key, corpus):
 
     # Load model
     print(f"\nLoading {model_name} from {model_path}...")
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    model = AutoModel.from_pretrained(model_path)
+    tokenizer = AutoTokenizer.from_pretrained(model_path, revision=revision)
+    model = AutoModel.from_pretrained(model_path, revision=revision)
     print(f"  Loaded. Vocab size: {tokenizer.vocab_size}")
 
     if normalize:
