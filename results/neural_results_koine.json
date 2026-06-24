@@ -1,11 +1,11 @@
 {
   "model": "Koine-BERT v0.1",
-  "model_path": "C:\\DATA\\DOCS\\POSTDOC\\PROJECTS_GIT\\Koine-BERT\\koine-bert-v0.1",
+  "model_path": "ABeZet/Koine-Greek-BERT",
   "normalization": "NFD accent-strip + lowercase",
   "methodology": "One-Class Cosine Distance with Mean Pooling",
   "anchor_chunks": 314,
-  "baseline_mean": 0.06041168421506882,
-  "baseline_std": 0.017721420153975487,
+  "baseline_mean": 0.06041167303919792,
+  "baseline_std": 0.017721418291330338,
   "distance_results": [
     {
       "text": "Colossians",
@@ -17,7 +17,7 @@
         0.86
       ],
       "t_statistic": 1.35,
-      "p_value": 0.19305254893240076,
+      "p_value": 0.193051966766146,
       "cohens_d": 0.32,
       "interpretation": "Indistinguishable"
     },
@@ -31,7 +31,7 @@
         0.32
       ],
       "t_statistic": -0.87,
-      "p_value": 0.4082996729178957,
+      "p_value": 0.40829983516672497,
       "cohens_d": -0.23,
       "interpretation": "Indistinguishable"
     },
@@ -45,7 +45,7 @@
         0.74
       ],
       "t_statistic": 1.66,
-      "p_value": 0.1083219882037931,
+      "p_value": 0.10832248931128825,
       "cohens_d": 0.31,
       "interpretation": "Indistinguishable"
     },
@@ -59,7 +59,7 @@
         1.14
       ],
       "t_statistic": 3.92,
-      "p_value": 0.0009238449318374255,
+      "p_value": 0.0009238497466572426,
       "cohens_d": 0.8,
       "interpretation": "Significant divergence"
     },
@@ -73,7 +73,7 @@
         1.21
       ],
       "t_statistic": 1.39,
-      "p_value": 0.1847903184223239,
+      "p_value": 0.18479041934076312,
       "cohens_d": 0.41,
       "interpretation": "Indistinguishable"
     },
@@ -87,7 +87,7 @@
         2.31
       ],
       "t_statistic": 2.8,
-      "p_value": 0.026459955636936632,
+      "p_value": 0.026460053680254104,
       "cohens_d": 1.1,
       "interpretation": "Moderate divergence"
     },
@@ -101,7 +101,7 @@
         1.12
       ],
       "t_statistic": 4.81,
-      "p_value": 9.689319670309266e-06,
+      "p_value": 9.689271782563841e-06,
       "cohens_d": 0.67,
       "interpretation": "Moderate divergence"
     }
